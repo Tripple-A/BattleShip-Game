@@ -1,5 +1,5 @@
 {
-  "name": "BattleShip-Game",
+  "name": "BattleShip",
   "version": "1.0.0",
   "description": "Implementation of The BattleShip Game Using Vanilla Javascript",
   "main": "index.js",
