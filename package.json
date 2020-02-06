@@ -1,0 +1,24 @@
+{
+  "name": "BattleShip-Game",
+  "version": "1.0.0",
+  "description": "Implementation of The BattleShip Game Using Vanilla Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tripple-A/BattleShip-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tripple-A/BattleShip-Game/issues"
+  },
+  "homepage": "https://github.com/Tripple-A/BattleShip-Game#readme",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  }
+}
