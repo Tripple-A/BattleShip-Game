@@ -1,6 +1,7 @@
 const Gameboard = (num) => (
   {
     grid: new Array(num),
+    placedShips: [],
     place(ship, startPos, direction) {
       if (direction === 'vertically') {
         for (let i = 0; i < ship.length; i += 1) {
@@ -11,7 +12,7 @@ const Gameboard = (num) => (
             ship.coordinates = [];
             return false;
           }
-        } return true;
+        } this.placedShips.push(ship); return true;
       }
       if (direction === 'horizontally') {
         for (let i = 0; i < ship.length; i += 1) {
@@ -22,10 +23,23 @@ const Gameboard = (num) => (
             ship.coordinates = [];
             return false;
           }
-        } return true;
-      }
+        } this.placedShips.push(ship); return true;
+      } return false;
     },
-  }
-);
+    receiveAttack(num) {
+      if (this.grid[num] === num) {
+        let result = false;
+        for (let i = 0; i < this.placedShips.length; i += 1) {
+          if (this.placedShips[i].coordinates.includes(num)) {
+            result = this.placedShips[i].hit(num);
+            break;
+          }
+        } return result;
+      } this.grid[num] = num; return false;
+    },
+    allSunk() {
+      return this.placedShips.every(ship => ship.isSunk());
+    },
+  });
 
 export default Gameboard;
