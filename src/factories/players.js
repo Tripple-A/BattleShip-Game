@@ -2,9 +2,8 @@ const Player = (name) => (
   {
     name,
     picked: [],
-    play(target, board) {
+    play(target) {
       if (!this.picked.includes(target)) {
-        board.receiveAttack(target);
         this.picked.push(target);
         return true;
       } return false;
@@ -17,14 +16,13 @@ const Computer = (() => {
 
   const pickNum = () => {
     const pickedNum = Math.floor(Math.random() * 100) + 1;
-    if (Computer.picked.includes(pickedNum)) {
-      pickNum();
-    } else { return pickedNum; }
+    return pickedNum;
   };
 
-  const play = (num, board) => {
-    board.receiveAttack(num);
+  const play = (num) => {
+    if (picked.includes(num)) { pickNum(); }
     Computer.picked.push(num);
+    return true;
   };
   return { pickNum, play, picked };
 })();

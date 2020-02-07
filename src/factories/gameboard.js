@@ -38,7 +38,8 @@ const Gameboard = (num) => (
       } this.grid[num] = num; return false;
     },
     allSunk() {
-      return this.placedShips.every(ship => ship.isSunk());
+      if (this.placedShips.length > 0) { return this.placedShips.every(ship => ship.isSunk()); }
+      return false;
     },
   });
 

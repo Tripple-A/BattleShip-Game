@@ -2,28 +2,38 @@ import Ship from '../factories/ships';
 import Gameboard from '../factories/gameboard';
 
 const Battle = (() => {
-  const createGrids = (r, gridContainer) => {
+  const createGrids = (r, gridContainer, board) => {
     for (let i = 1; i <= r * r; i += 1) {
       const squares = document.createElement('div');
       squares.style.width = `${480 / r - 0.2}px`;
       squares.style.height = `${480 / r - 0.2}px`;
-      squares.className = 'grids';
-      squares.id = i;
-      squares.textContent = i;
+      if (board === 'player') {
+        squares.className = 'grids';
+        squares.id = i;
+        squares.textContent = i;
+      } else {
+        squares.className = 'gridders';
+        squares.id = 101 * i;
+      }
+
       gridContainer.appendChild(squares);
     }
   };
   const playerBoard = Gameboard(100);
   const clear = () => {
-   
+    document.querySelectorAll('.grids').forEach(grid => {
+      grid.textContent = '';
+    });
   };
   const start = () => {
     if (playerBoard.placedShips.length === 5) {
       const compGrid = document.querySelector('.compGrid');
-      const compBoard = Gameboard(100);
       document.querySelector('.shipMaker').classList.add('no-display');
-      createGrids(10, compGrid);
+      createGrids(10, compGrid, 'comp');
       compGrid.classList.remove('no-display');
+      document.querySelector('.creation').classList.add('center');
+      clear();
+      document.querySelector('.start').classList.remove('no-display');
     } else {
       document.querySelector('.placement').classList.remove('no-display');
     }
@@ -39,6 +49,12 @@ const Battle = (() => {
     if (direction === 'vertically' && (length - 1) * 10 + position <= 100) { return true; }
     document.querySelector('.invalid').classList.remove('no-display');
     return false;
+  };
+
+  const disable = () => {
+    document.querySelectorAll('.gridders').forEach(grid => {
+      grid.classList.add('disabled');
+    });
   };
 
   const placeShips = (i) => {
@@ -87,11 +103,13 @@ const Battle = (() => {
       });
     }
     const btn = document.createElement('button');
-    btn.textContent = 'Start Game';
+    btn.textContent = 'Inform Opponent I am Readyyy';
     shipMaker.appendChild(btn);
     btn.onclick = start;
   };
-  return { createGrids, createShips, placeShips };
+  return {
+    createGrids, createShips, placeShips, playerBoard, disable,
+  };
 })();
 
 export default Battle;
