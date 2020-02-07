@@ -1,0 +1,33 @@
+.instructions {
+    text-align: center;
+}
+
+#gridContainer, .compGrid{
+    width: 480px;
+    height:480px;
+    border:5px solid black;
+}
+
+.grids{
+    border: 0.1px solid greenyellow;
+    float: left;
+}
+
+.creation{
+   display: flex;
+}
+
+.shipMaker{
+    margin-left: 20px;
+    padding: 10px;
+    background-color: honeydew;
+}
+
+.no-display{
+    display: none;
+}
+
+.created, .invalid, .placement{
+    color: red;
+    font-size: 16px;
+}
