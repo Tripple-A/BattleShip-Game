@@ -5,6 +5,7 @@ const myShip1 = Ship(3);
 const myShip2 = Ship(3);
 const myShip3 = Ship(2);
 const myboard = Gameboard(100);
+
 test('can initialize a ship', () => {
   expect(myboard.grid.length).toBe(100);
 });
