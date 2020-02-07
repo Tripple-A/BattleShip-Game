@@ -40,7 +40,7 @@ const Battle = (() => {
   };
   const showShip = (ship) => {
     ship.coordinates.forEach(num => {
-      document.getElementById(`${num}`).style.background = 'green';
+      document.getElementById(`${num}`).classList.add('green');
     });
   };
 
@@ -54,6 +54,12 @@ const Battle = (() => {
   const disable = () => {
     document.querySelectorAll('.gridders').forEach(grid => {
       grid.classList.add('disabled');
+    });
+  };
+
+  const enable = () => {
+    document.querySelectorAll('.gridders').forEach(grid => {
+      grid.classList.remove('disabled');
     });
   };
 
@@ -107,8 +113,22 @@ const Battle = (() => {
     shipMaker.appendChild(btn);
     btn.onclick = start;
   };
+
+  const winner = document.querySelector('.winner');
+  const over = (playerBoard, compBoard, player1) => {
+    const result = playerBoard.allSunk() || compBoard.allSunk();
+    if (result) {
+      Battle.disable();
+      if (playerBoard.allSunk()) {
+        winner.textContent = 'The Computer won this game.';
+      } else {
+        winner.textContent = `${player1.name} won this round`;
+      }
+    }
+    return result;
+  };
   return {
-    createGrids, createShips, placeShips, playerBoard, disable,
+    createGrids, createShips, placeShips, playerBoard, disable, enable, over,
   };
 })();
 

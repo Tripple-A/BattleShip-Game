@@ -8,18 +8,18 @@ const gridContainer = document.getElementById('gridContainer');
 const shipMaker = document.querySelector('.shipMaker');
 const compBoard = Gameboard(100);
 const { playerBoard } = Battle;
-const player1 = Player('Jeff');
+const player1 = Player('You');
 const ship5 = Ship(5);
 const ship4 = Ship(4);
 const ship3 = Ship(3);
 const ship2 = Ship(2);
 const ship1 = Ship(1);
 const append = (board, num, grid) => {
-    if (board.receiveAttack(num)) {
-        grid.classList.add('red');
-      } else {
-        grid.textContent = 'X';
-      }
+  if (board.receiveAttack(num)) {
+    grid.classList.add('red');
+  } else {
+    grid.textContent = 'X';
+  }
 };
 
 const start = () => {
@@ -31,16 +31,17 @@ const start = () => {
   document.querySelectorAll('.gridders').forEach(grid => {
     grid.addEventListener('click', () => {
       const num = grid.id / 101;
-      player1.play(num);
-      append(compBoard, num, grid);
-      Battle.disable();
+      if (player1.play(num) && !Battle.over(playerBoard, compBoard, player1)) {
+        append(compBoard, num, grid);
+        Battle.disable();
+      }
       const num2 = Computer.pickNum();
-      if (Computer.play(num2)) {
-        if (playerBoard.receiveAttack(num2)) {
-          document.getElementById(`${num2}`).classList.add('red');
-        } else {
-          document.getElementById(`${num2}`).textContent = 'X';
-        }
+      if (Computer.play(num2) && !Battle.over(playerBoard, compBoard, player1)) {
+        const grid = document.getElementById(`${num2}`);
+        grid.classList.remove('green');
+        grid.textContent = '';
+        append(playerBoard, num2, grid);
+        Battle.enable();
       }
     });
   });
@@ -56,6 +57,7 @@ const ready = () => {
   });
   document.querySelector('.start').addEventListener('click', () => {
     start();
+    document.querySelector('.start').classList.add('no-display');
   });
 };
 

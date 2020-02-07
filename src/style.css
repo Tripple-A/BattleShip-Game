@@ -37,8 +37,16 @@ body{
     background-color: honeydew;
 }
 
+.winner{
+    color: green;
+    font-size: 26px;
+}
 .no-display{
     display: none;
+}
+
+.green{
+    background-color: green;
 }
 
 .created, .invalid, .placement{

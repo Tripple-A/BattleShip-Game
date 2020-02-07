@@ -12,18 +12,22 @@
     <p> You can have a maximum of 5 ships of max length 5, Below is your board.</p>
     <p> Pick how you want your ships to be placed and their respective lengths.</p>
     <p> Specify your starting position using the numbers you see on the board as references for placement and placement direction.</p>
+    <p> On click of button 'Start Game',Player can click opponent's board to target ships</p>
+    <p class="winner"></p>
     <button class="ready"> I AM READY</button>
+    <button class="start no-display"> START GAME</button>
     </div>
+    
     <div class="creation">
         <div id="gridContainer"></div>
         <div class="compGrid no-display"></div>
         <div class="shipMaker">
+            <div class="nameless no-display"> Please tell us your name </div>
             <div class="created no-display"> Could not create that ship,position taken </div>
             <div class="invalid no-display"> Position picked is invalid,Please pick a valid position </div>
             <div class="placement no-display"> Place 5 ships before waking up your opponent, Opponent is asleep. </div>
         </div>
     </div>
-    <button class="start no-display"> START GAME</button>
     <script src="main.js"></script>
 </body>
 </html>
