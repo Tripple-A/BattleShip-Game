@@ -43,11 +43,9 @@ test('it can tell if all ships are sunk', () => {
   myboard.receiveAttack(20);
   myboard.receiveAttack(21);
   myboard.receiveAttack(22);
-  expect(myShip2.isSunk()).toBe(true);
   expect(myboard.allSunk()).toBe(false);
   myboard.receiveAttack(15);
   myboard.receiveAttack(25);
   myboard.receiveAttack(35);
-  expect(myShip1.isSunk()).toBe(true);
   expect(myboard.allSunk()).toBe(true);
 });
