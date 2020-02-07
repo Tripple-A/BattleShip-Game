@@ -1,5 +1,6 @@
 # BattleShip-Game
 Implementation of The BattleShip Game Using Vanilla Javascript
+Find game [here](https://raw.githack.com/Tripple-A/BattleShip-Game/battleship-logic/dist/index.html?#)
 
 ## HOW TO PLAY
 * Create five shops and place the, on the board
