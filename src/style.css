@@ -1,0 +1,60 @@
+body{
+    justify-content: center;
+}
+
+.instructions {
+    text-align: center;
+}
+
+#gridContainer, .compGrid{
+    width: 480px;
+    height:480px;
+    border:5px solid black;
+    margin-right:20px;
+    margin-left:20px;
+}
+
+.grids, .gridders{
+    border: 0.1px solid greenyellow;
+    float: left;
+}
+
+.red{
+    background-color: red;
+}
+.creation{
+   display: flex; 
+}
+
+.center{
+    align-items: center;
+   justify-content: center;
+}
+
+.shipMaker{
+    margin-left: 20px;
+    padding: 10px;
+    background-color: honeydew;
+}
+
+.winner{
+    color: green;
+    font-size: 26px;
+}
+.no-display{
+    display: none;
+}
+
+.green{
+    background-color: green;
+}
+
+.created, .invalid, .placement{
+    color: red;
+    font-size: 16px;
+}
+
+.disabled{
+    pointer-events: none;
+    opacity: 0.4;
+}
