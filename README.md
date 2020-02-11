@@ -1,9 +1,10 @@
 # BattleShip-Game
 Implementation of The BattleShip Game Using Vanilla Javascript
-Find game [here](https://raw.githack.com/Tripple-A/BattleShip-Game/battleship-logic/dist/index.html?#)
+Find game [here](https://raw.githack.com/Tripple-A/BattleShip-Game/develop/dist/index.html)
 
 ## HOW TO PLAY
-* Create five shops and place the, on the board
+* This game should be played from a medium or large screen due to how large the boards are.
+* Create five ships and place them on the board
 * Click on start game
 * Click on the opponent's board to target his board
 * Keep clicking until all ships have been deflated.
