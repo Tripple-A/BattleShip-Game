@@ -9,6 +9,7 @@ This is an implementation of The BattleShip Game Using Vanilla Javascript
 * [Live Preview](#live-preview)
 * [Required Installations](#required-installations)
 * [Instalation of This App](#instalation)
+* [Run Tests](#run-tests)
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
@@ -74,6 +75,19 @@ your@pc:~$ npm install
 
 Open the index.html page in your browser.
 
+<!-- run tests -->
+## Run Tests
+
+Run all tests
+
+```Shell
+your@pc:~$ jest
+```
+Run tests on a specific folder
+
+```Shell
+your@pc:~$ jest src/tests/filename.js
+```
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
