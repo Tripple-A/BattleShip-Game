@@ -3,7 +3,7 @@ This is an implementation of The BattleShip Game Using Vanilla Javascript
 
 ## Table of Contents
 
-* [User Features](#how-to-pla)
+* [How To Play](#how-to-play)
 * [Technologies Employed](#technologies-employed)
 * [Built With](#built-with)
 * [Live Preview](#live-preview)
