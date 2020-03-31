@@ -81,12 +81,12 @@ Open the index.html page in your browser.
 Run all tests
 
 ```Shell
-your@pc:~$ jest
+your@pc:~$ npm test
 ```
 Run tests on a specific folder
 
 ```Shell
-your@pc:~$ jest src/tests/filename.js
+your@pc:~$ npm test src/tests/filename.js
 ```
 ## License
 
